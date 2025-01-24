@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Peminjaman Ruangan</title>
+    <link href="img/logo.png" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .input-focus:focus {
+            border-color: #3b82f6; /* Warna biru */
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Bayangan saat fokus */
+        }
+
+        .custom-button {
+            background-color: #78B3CE; /* Warna tombol */
+            color: white; /* Warna teks tombol */
+        }
+
+        .custom-button:hover {
+            background-color: #E0F2FE; /* Warna saat hover (blue-100) */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-5">
+    <div class="container mx-auto">
+        <h1 class="text-2xl text-black font-bold mb-4 text-center">Form Peminjaman Ruangan</h1>
+        <form id="bookingForm" class="bg-white p-8 rounded-lg shadow-lg max-w-xl mx-auto"> <!-- Perbesar lebar form -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Nama Peminjam</label>
+                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan nama Anda">
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-gray-700">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan nomor telepon Anda">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email (Gmail)</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan email Anda">
+            </div>
+            <div class="mb-4">
+                <label for="room" class="block text-sm font-medium text-gray-700">Pilih Ruangan</label>
+                <select id="room" name="room" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">-- Pilih Ruangan --</option>
+                    <option value="Ruang A">Aula Khusus</option>
+                    <option value="Ruang B">Aula Resmi</option>
+                    <option value="Ruang C">Aula Serbaguna</option>
+                    <option value="Ruang D">Lab Computer</option>
+                    <option value="Ruang E">Laboratorium</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="date" class="block text-sm font-medium text-gray-700">Tanggal Peminjaman</label>
+                <input type="date" id="date" name="date" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label for="time" class="block text-sm font-medium text-gray-700">Waktu Peminjaman</label>
+                <input type="time" id="time" name="time" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            < <div class="mb-4">
+                <label for="participants" class="block text-sm font-medium text-gray-700">Jumlah Peserta</label>
+                <input type="number" id="participants" name="participants" required min="1" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan jumlah peserta">
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                <textarea id="description" name="description" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Masukkan deskripsi peminjaman"></textarea>
+            </div>
+            <div class="mb-4">
+                <button type="submit" class="w-full custom-button font-bold py-2 rounded-md">Ajukan Peminjaman</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal Greeting Card -->
+    <div id="greetingCard" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-1/3">
+            <h2 class="text-xl text-blue-900 font-bold mb-4">Terima Kasih atas Pesanan Anda!</h2>
+            <p id="greetingContent"></p>
+            <div class="mt-4">
+                <a href="Landing Page.html" id="backToHomeButton" class="custom-button font-bold py-2 px-4 rounded-md text-center block hover:bg-blue-100">Kembali ke Beranda</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+            
+            // Mengambil data dari form
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const room = document.getElementById('room').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const participants = document.getElementById('participants').value;
+            const description = document.getElementById('description').value;
+
+            // Menampilkan data di greeting card
+            const greetingContent = `
+                Pesanan Anda:<br>
+                Nama Peminjam: ${name}<br>
+                Nomor Telepon: ${phone}<br>
+                Email: ${email}<br>
+                Ruangan: ${room}<br>
+                Tanggal Peminjaman: ${date}<br>
+                Waktu Peminjaman: ${time}<br>
+                Jumlah Peserta: ${participants}<br>
+                Deskripsi: ${description}
+            `;
+            document.getElementById('greetingContent').innerHTML = greetingContent;
+
+            // Menampilkan modal greeting card
+            document.getElementById('greetingCard').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

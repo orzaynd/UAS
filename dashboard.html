@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="img/logo.png" rel="icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+
+  <div class="min-h-screen bg-gray-100">
+    <aside
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-[#213555] shadow-lg transform transition-transform duration-300 ease-in-out translate-x-0 lg:translate-x-0">
+      <div class="h-full flex flex-col">
+        <div class="px-6 py-4 border-b">
+          <div class="flex items-center space-x-2 p-4">
+            <img id="logo" src="img/logo.png" alt="Logo" class="w-10 h-auto object-contain">
+            <span class="font-bold text-white">Harmony Hall</span>
+          </div>
+        </div>
+        <nav class="flex-1 px-4 py-6 space-y-2">
+          <a href="#" class="flex items-center px-4 py-3 text-gray-700 bg-gray-100 rounded-lg">Dashboard</a>
+          <a href="./bookings.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Bookings</a>
+          <a href="./payments.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Payments</a>
+          <a href="./statistics.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Statistic</a>
+          <a href="./team.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Teams</a>
+        </nav>
+        <div class="px-4 py-6 border-t">
+          <a href="./Landing Page.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg w-full">Logout</a>
+        </div>
+      </div>
+    </aside>
+    <div class="lg:pl-64">
+      <header class="bg-white shadow-sm">
+        <div class="flex items-center justify-between px-6 py-4">
+          <button class="lg:hidden p-2 rounded-md hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-x h-6 w-6">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+          <div class="flex-1 max-w-xl ml-6">
+            <div class="relative">
+              <input type="text" id="search" placeholder="Search for rooms..."
+                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button class="p-2 rounded-lg hover:bg-gray-100 relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-bell h-6 w-6 text-gray-600">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+              </svg>
+              <span class="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+            </button>
+            <img
+              src="https://api.dicebear.com/9.x/thumbs/svg?seed=orijaaaa"
+              alt="Profile" class="h-8 w-8 rounded-full">
+          </div>
+        </div>
+      </header>
+      <main class="p-6 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-gray-500 text-sm">Total Ruangan</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-building2 h-6 w-6 text-blue-500">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path>
+                <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path>
+                <path d="M18 ```html
+                9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path>
+                <path d="M10 6h4"></path>
+                <path d="M10 10h4"></path>
+                <path d="M10 14h4"></path>
+                <path d="M10 18h4"></path>
+              </svg>
+            </div>
+            <p id="total-rooms" class="text-2xl font-semibold mt-2">10</p>
+            <p class="text-green-500 text-sm mt-2">+2.5% dari bulan sebelumnya</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-gray-500 text-sm">Pelanggan Aktif</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-users h-6 w-6 text-blue-500">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <p id="active-tenants" class="text-2xl font-semibold mt-2">90</p>
+            <p class="text-green-500 text-sm mt-2">+4.3% dari bulan sebelumnya</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-gray-500 text-sm">Ruangan Tersedia</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-house h-6 w-6 text-blue-500">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path
+                  d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                </path>
+              </svg>
+            </div>
+            <p id="available-rooms" class="text-2xl font-semibold mt-2">8</p>
+            <p class="text-red-500 text-sm mt-2">-1.5% dari bulan sebelumnya</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-gray-500 text-sm">Pendapatan Bulanan</h3>
+              <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-wallet h-6 w-6 text-blue-500">
+                <path
+                  d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0  1-1v-2a1 1 0 0 0-1-1">
+                </path>
+                <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+              </svg>
+            </div>
+            <p id="monthly-revenue" class="text-2xl font-semibold mt-2">Rp 10.000.000</p>
+            <p class="text-green-500 text-sm mt-2">+12.5% dari bulan sebelunya</p>
+          </div>
+        </div>
+
+        <!-- Modal Background -->
+        <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+          <!-- Modal Content -->
+          <div id="modal-content"
+            class="bg-white rounded-lg max-w-2xl w-full mx-4 overflow-y-auto h-[calc(100vh-4rem)] shadow-xl">
+            <div class="p-4 border-b flex justify-between items-center">
+              <h2 id="modal-title" class="text-xl font-semibold"></h2>
+              <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="p-6">
+              <img id="modal-image" src="" alt="Room" class="w-full h-64 object-cover rounded-lg">
+              <div class="mt-6 space-y-4">
+                <div class="flex justify-between items-center">
+                  <div>
+                    <h3 class="font-semibold text-gray-600">Lokasi</h3>
+                    <p id="modal-location" class="text-gray-800 text-lg"></p>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-600">Harga</h3>
+                    <p id="modal-price" class="text-blue-600 font-semibold text-lg"></p>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-600">Status</h3>
+                  <span id="modal-status" class="inline-block px-3 py-1 rounded-full text-sm mt-1"></span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-600">Deskripsi</h3>
+                  <p id="modal-description" class="text-gray-600 mt-1"></p>
+                </div>
+                <div class="flex justify-end mt-6">
+                  <button onclick="closeModal()"
+                    class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors">
+                    Tutup
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow">
+          <div class="px-6 py-4 border-b">
+            <h2 class="text-lg font-semibold">Daftar Terbaru</h2>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="listings-container">
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold">Panel Kontrol Peralatan</h3>
+            <button class="text-blue-500 text-sm">Lihat Semua</button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 bg-gray-50 rounded-lg border flex justify-between items-center">
+              <div>
+                <h4 class="font-medium text-gray-700">AC Utama</h4>
+                <p class="text-sm text-gray-500 status">Status: Aktif</p>
+              </div>
+              <button class="px-3 py-2 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600 action-button" data-action="nonaktifkan">Nonaktifkan</button>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg border flex justify-between items-center">
+              <div>
+                <h4 class="font-medium text-gray-700">Generator Listrik</h4>
+                <p class="text-sm text-gray-500 status">Status: Siaga</p>
+              </div>
+              <button class="px-3 py-2 bg-green-500 text-white text-sm rounded-lg hover:bg-green-600 action-button" data-action="aktifkan">Aktifkan</button>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg border flex justify-between items-center">
+              <div>
+                <h4 class="font-medium text-gray-700">Lampu Aula</h4>
+                <p class="text-sm text-red-500 status">Status: Tidak Berfungsi</p>
+              </div>
+              <button class="px-3 py-2 bg-yellow-500 text-white text-sm rounded-lg hover:bg-yellow-600 action-button" data-action="perbaiki">Perbaiki</button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold">Notifikasi Pemeliharaan</h3>
+            <button class="text-blue-500 text-sm">Lihat Semua</button>
+          </div>
+          <ul class="space-y-4">
+            <li class="flex items-center justify-between">
+              <div>
+                <h4 class="font-medium text-gray-700">AC Utama</h4>
+                <p class="text-sm text-gray-500">Kalibrasi diperlukan dalam 3 hari</p>
+              </div>
+              <button class="px-3 py-2 bg-yellow-500 text-white text-sm rounded-lg hover:bg-yellow-600">Atur Jadwal</button>
+            </li>
+            <li class="flex items-center justify-between">
+              <div>
+                <h4 class="font-medium text-gray-700">Generator Listrik</h4>
+                <p class="text-sm text-gray-500">Perawatan berkala overdue</p>
+              </div>
+              <button class="px-3 py-2 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600">Perbaiki</button>
+            </li>
+          </ul>
+        </div>
+        
+      </main>
+    </div>
+  </div>
+  <script>
+    // Room listings data
+    const listings = [
+      {
+        id: 1,
+        title: "Aula Khusus",
+        location: "Depok",
+        price: "150.000",
+        status: "Available",
+        image: "./img/Ak.jpg",
+        description: "Aula modern dan nyaman ini tersedia untuk disewakan, cocok untuk berbagai acara seperti seminar, workshop, pelatihan, atau rapat besar. Dilengkapi dengan kursi ergonomis, meja melingkar, layar proyektor, monitor tambahan, dan pencahayaan LED yang terang, aula ini menawarkan suasana profesional dan mendukung interaksi antar peserta. Dengan dekorasi elegan bernuansa biru dan putih, serta ruangan ber-AC yang menjamin kenyamanan, aula ini dapat menampung banyak peserta dan sangat ideal untuk acara skala menengah hingga besar."
+      },
+      {
+        id: 2,
+        title: "Aula Resmi",
+        location: "Depok",
+        price: "200.000",
+        status: "Reserved",
+        image: "./img/A2.jpg",
+        description: "Aula elegan dengan desain interior kayu ini siap disewakan untuk berbagai keperluan acara, seperti seminar, konferensi, rapat, maupun kegiatan formal lainnya. Aula ini dilengkapi dengan kursi-kursi nyaman berwarna hijau yang tersusun rapi dan memberikan suasana profesional. Pencahayaan yang hangat serta tata ruang akustik yang baik menjamin kelancaran acara Anda. Ruangan berkapasitas besar ini juga dilengkapi pendingin udara, sehingga memberikan kenyamanan optimal bagi semua peserta."
+      },
+      {
+        id: 3,
+        title: "Lab",
+        location: "Depok",
+        price: "250.000",
+        status: "Available",
+        image: "./img/L.jpg",
+        description: "Laboratorium futuristik ini dirancang dengan teknologi canggih untuk mendukung berbagai kegiatan penelitian dan pengembangan. Dilengkapi dengan perangkat modern seperti robot lengan otomatis, layar digital beresolusi tinggi, dan meja kerja yang ergonomis, laboratorium ini menghadirkan suasana yang inovatif dan efisien. Pencahayaan berbentuk hexagonal pada plafon memberikan nuansa modern, sementara ruangannya dirancang dengan material reflektif yang bersih dan profesional. Laboratorium ini sangat ideal untuk proyek penelitian teknologi tinggi, eksperimen sains, atau pengembangan inovasi masa depan."
+      }
+    ];
+
+    // Function to render listing cards
+    function renderListings() {
+      const container = document.getElementById('listings-container');
+      container.innerHTML = listings.map(listing => `
+                <div class="bg-white border rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                     onclick="openModal(${listing.id})">
+                    <img src="${listing.image}" alt="${listing.title}" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">${listing.title}</h3>
+                        <p class="text-gray-500 text-sm mt-1">${listing.location}</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-blue-600 font-semibold">Rp${listing.price}/hour</span>
+                            <span class="px-2 py-1 rounded-full text-sm ${listing.status === 'Available'
+          ? 'bg-green-100 text-green-800'
+          : 'bg-yellow-100 text-yellow-800'
+        }">${listing.status}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+    }
+
+    // Function to open modal
+    function openModal(listingId) {
+      const listing = listings.find(item => item.id === listingId);
+      const modal = document.getElementById('modal-overlay');
+
+      // Update modal content
+      document.getElementById('modal-title').textContent = listing.title;
+      document.getElementById('modal-image').src = listing.image;
+      document.getElementById('modal-location').textContent = listing.location;
+      document.getElementById('modal-price').textContent = `Rp${listing.price}/hour`;
+      document.getElementById('modal-description').textContent = listing.description;
+
+      const statusElement = document.getElementById('modal-status');
+      statusElement.textContent = listing.status;
+      statusElement.className = `inline-block px-2 py-1 rounded-full text-sm ${listing.status === 'Available'
+        ? 'bg-green-100 text-green-800'
+        : 'bg-yellow-100 text-yellow-800'
+        }`;
+
+      // Show modal
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close modal
+    function closeModal() {
+      const modal = document.getElementById('modal-overlay');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('modal-overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('modal-overlay')) {
+        closeModal();
+      }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', renderListings);
+
+    // logo
+    window.addEventListener("scroll", () => {
+      const logo = document.getElementById("logo");
+      if (window.scrollY > 50) {
+        logo.classList.add("w-8");
+        logo.classList.remove("w-10");
+      } else {
+        logo.classList.add("w-10");
+        logo.classList.remove("w-8");
+      }
+    });
+  
+    // tambahan
+    document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.action-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const action = button.dataset.action;
+        const statusElement = button.closest('div').querySelector('.status');
+
+        if (action === 'nonaktifkan') {
+          statusElement.textContent = 'Status: Nonaktif';
+          statusElement.classList.replace('text-gray-500', 'text-red-500');
+          button.textContent = 'Aktifkan';
+          button.dataset.action = 'aktifkan';
+          button.classList.replace('bg-red-500', 'bg-green-500');
+        } else if (action === 'aktifkan') {
+          statusElement.textContent = 'Status: Aktif';
+          statusElement.classList.replace('text-red-500', 'text-gray-500');
+          button.textContent = 'Nonaktifkan';
+          button.dataset.action = 'nonaktifkan';
+          button.classList.replace('bg-green-500', 'bg-red-500');
+        } else if (action === 'perbaiki') {
+          statusElement.textContent = 'Status: Aktif';
+          statusElement.classList.replace('text-red-500', 'text-gray-500');
+          button.textContent = 'Nonaktifkan';
+          button.dataset.action = 'nonaktifkan';
+          button.classList.replace('bg-yellow-500', 'bg-red-500');
+        }
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookings Data</title>
+    <link href="img/logo.png" rel="icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="min-h-screen bg-gray-100">
+        <aside
+            class="fixed inset-y-0 left-0 z-50 w-64 bg-[#213555] shadow-lg transform transition-transform duration-300 ease-in-out translate-x-0 lg:translate-x-0">
+            <div class="h-full flex flex-col">
+                <div class="px-6 py-4 border-b">
+                    <div class="flex items-center space-x-2 p-4">
+                        <img id="logo" src="img/logo.png" alt="Logo" class="w-10 h-auto object-contain">
+                        <span class="font-bold text-white">Harmony Hall</span>
+                    </div>
+                </div>
+                <nav class="flex-1 px-4 py-6 space-y-2">
+                    <a href="./dashboard.html"
+                        class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Dashboard</a>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-gray-700 bg-gray-100 rounded-lg">Bookings</a>
+                    <a href="./payments.html"
+                        class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Payments</a>
+                    <a href="./statistics.html"
+                        class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Statistic</a>
+                    <a href="./team.html"
+                        class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Teams</a>
+                </nav>
+                <div class="px-4 py-6 border-t">
+                    <a href="#"
+                        class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg w-full">Logout</a>
+                </div>
+            </div>
+        </aside>
+        <div class="lg:pl-64">
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <button class="lg:hidden p-2 rounded-md hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-menu h-6 w-6">
+                            <line x1="4" x2="20" y1="12" y2="12"></line>
+                            <line x1="4" x2="20" y1="6" y2="6"></line>
+                            <line x1="4" x2="20" y1="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="flex-1 max-w-xl ml-6">
+                        <div class="relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input type="text" placeholder="Search for rooms..."
+                                class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="p-2 rounded-lg hover:bg-gray-100 relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell h-6 w-6 text-gray-600">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                            </svg>
+                            <span class="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+                        </button>
+                        <img src="https://api.dicebear.com/9.x/thumbs/svg?seed=orijaaaa" alt="Profile"
+                            class="h-8 w-8 rounded-full">
+                    </div>
+                </div>
+            </header>
+            <main class="p-6 space-y-4">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="px-6 py-4 border-b flex justify-between items-center">
+                        <h2 class="text-lg font-semibold">Data Penyewa</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Nama
+                                        </th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Nomor Telepon
+                                        </th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Tanggal Masuk
+                                        </th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Jam
+                                        </th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Ruangan
+                                        </th>
+                                        <th
+                                            class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            Aksi
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Amanda Bello</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">+62 8123-4567</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12/15/2024</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2:00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Aula Khusus</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-4">Edit</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Budi Santoso</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">+62 8234-5678</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">12/16/2024</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lab</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-4">Edit</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Kartika Permata
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">+62 8345-6789</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">11/17/2024</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">03.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Aula Umum</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-4">Edit</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Satria Jaya</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">+62 8456-7890</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1/18/2025</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Lab</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-4">Edit</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Sartika Canddra
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">+62 8567-8901</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1/19/2025</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">02.00</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Aula Umum</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <button class="text-blue-600 hover:text-blue-900 mr-4">Edit</button>
+                                            <button class="text-red-600 hover:text-red-900">Cancel</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-4 mb-4">
+                    <h3 class="text-lg font-semibold mb-2">Ruangan Tersedia</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-blue-100"></div>
+                            <span>Aula Khusus</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-green-100"></div>
+                            <span>Aula Umum</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-4 h-4 rounded bg-amber-100"></div>
+                            <span>Lab</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm mb-6">
+                    <div class="p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <button id="prev-month" class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <h2 id="current-month" class="text-xl font-semibold text-gray-800"></h2>
+                            <button id="next-month" class="p-2 hover:bg-gray-100 rounded-full">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <button id="new-booking"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            Pemesanan Baru
+                        </button>
+                    </div>
+                </div>
+                <!-- Calendar -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="grid grid-cols-7 bg-gray-50 border-b">
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Min</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Sen</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Sel</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Rab</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Kam</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Jum</div>
+                        <div class="p-2 text-sm font-medium text-gray-600 text-center">Sab</div>
+                    </div>
+                    <div id="calendar-days" class="grid grid-cols-7"></div>
+                </div>
+        </div>
+        <!-- Booking Modal -->
+        <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-md w-full p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-lg font-semibold">Sewa Ruangan</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <form id="booking-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Ruangan</label>
+                        <select id="room" class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                            <option value="1">Aula Khusus</option>
+                            <option value="2">Aula Umum</option>
+                            <option value="3">Lab</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+                        <input type="date" id="date"
+                            class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Mulai</label>
+                            <input type="time" id="start-time"
+                                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Sampai</label>
+                            <input type="time" id="end-time"
+                                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Catatan</label>
+                        <textarea id="notes" rows="3"
+                            class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <div class="flex justify-end space-x-3 pt-4">
+                        <button type="button" id="cancel-booking"
+                            class="px-4 py-2 border rounded-lg hover:bg-gray-50 transition-colors">
+                            Batal
+                        </button>
+                        <button type="submit"
+                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            Sewa Ruangan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </main>
+    </div>
+    </div>
+    <script>
+        // Calendar configuration
+        const today = new Date();
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+        let selectedDate = null;
+
+        // Room configuration
+        const rooms = {
+            1: { name: 'Aula Khusus', color: 'bg-blue-100' },
+            2: { name: 'Aula Umum', color: 'bg-green-100' },
+            3: { name: 'Lab', color: 'bg-amber-100' },
+        };
+
+        // DOM elements
+        const calendarDays = document.getElementById('calendar-days');
+        const currentMonthElement = document.getElementById('current-month');
+        const bookingModal = document.getElementById('booking-modal');
+        const bookingForm = document.getElementById('booking-form');
+
+        // Month names
+        const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Augustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        // Initialize or load bookings from localStorage
+        let bookings = JSON.parse(localStorage.getItem('bookings')) || {};
+
+        function renderCalendar() {
+            calendarDays.innerHTML = '';
+            currentMonthElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            // Create the calendar grid
+            for (let i = 0; i < firstDay; i++) {
+                const emptyCell = document.createElement('div');
+                emptyCell.className = 'h-24 bg-gray-50';
+                calendarDays.appendChild(emptyCell);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(currentYear, currentMonth, day);
+                const dateString = date.toISOString().split('T')[0];
+                const isToday = date.toDateString() === today.toDateString();
+
+                const dayCell = document.createElement('div');
+                dayCell.className = `h-24 p-2 border border-gray-200 ${isToday ? 'bg-blue-50' : 'bg-white'
+                    } relative cursor-pointer hover:bg-gray-50 transition-colors`;
+
+                // Add day number
+                const dayNumber = document.createElement('span');
+                dayNumber.className = `${isToday ? 'font-bold text-blue-600' : 'text-gray-700'
+                    } text-sm`;
+                dayNumber.textContent = day;
+                dayCell.appendChild(dayNumber);
+
+                // Add bookings for this day
+                if (bookings[dateString]) {
+                    const bookingsContainer = document.createElement('div');
+                    bookingsContainer.className = 'mt-1 space-y-1';
+
+                    bookings[dateString].forEach(booking => {
+                        const bookingElement = document.createElement('div');
+                        bookingElement.className = `${rooms[booking.room].color} text-xs p-1 rounded truncate`;
+                        bookingElement.textContent = `${booking.startTime} ${rooms[booking.room].name}`;
+                        bookingsContainer.appendChild(bookingElement);
+                    });
+
+                    dayCell.appendChild(bookingsContainer);
+                }
+
+                dayCell.addEventListener('click', () => handleDateClick(dateString));
+                calendarDays.appendChild(dayCell);
+            }
+        }
+
+        function handleDateClick(dateString) {
+            selectedDate = dateString;
+            document.getElementById('date').value = dateString;
+            showModal();
+        }
+
+        function showModal() {
+            bookingModal.classList.remove('hidden');
+            bookingModal.classList.add('flex');
+        }
+
+        function hideModal() {
+            bookingModal.classList.add('hidden');
+            bookingModal.classList.remove('flex');
+            bookingForm.reset();
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+
+            const formData = {
+                room: document.getElementById('room').value,
+                date: document.getElementById('date').value,
+                startTime: document.getElementById('start-time').value,
+                endTime: document.getElementById('end-time').value,
+                notes: document.getElementById('notes').value
+            };
+
+            // Initialize the date's booking array if it doesn't exist
+            if (!bookings[formData.date]) {
+                bookings[formData.date] = [];
+            }
+
+            // Add the new booking and sort by start time
+            bookings[formData.date].push(formData);
+            bookings[formData.date].sort((a, b) => a.startTime.localeCompare(b.startTime));
+
+            // Save to localStorage
+            localStorage.setItem('bookings', JSON.stringify(bookings));
+
+            hideModal();
+            renderCalendar();
+        }
+
+        // Event Listeners
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar();
+        });
+
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar();
+        });
+
+        document.getElementById('new-booking').addEventListener('click', showModal);
+        document.getElementById('close-modal').addEventListener('click', hideModal);
+        document.getElementById('cancel-booking').addEventListener('click', hideModal);
+        bookingForm.addEventListener('submit', handleBookingSubmit);
+
+        // Initialize calendar
+        renderCalendar();
+    </script>
+</body>
+
+</html>

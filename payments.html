@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Enhanced Payment Dashboard</title>
+   <link href="img/logo.png" rel="icon">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+   <div class="min-h-screen">
+      <aside
+      class="fixed inset-y-0 left-0 z-50 w-64 bg-[#213555] shadow-lg transform transition-transform duration-300 ease-in-out translate-x-0 lg:translate-x-0">
+      <div class="h-full flex flex-col">
+        <div class="px-6 py-4 border-b">
+          <div class="flex items-center space-x-2 p-4">
+            <img id="logo" src="img/logo.png" alt="Logo" class="w-10 h-auto object-contain">
+            <span class="font-bold text-white">Harmony Hall</span>
+          </div>
+        </div>
+        <nav class="flex-1 px-4 py-6 space-y-2">
+          <a href="./dashboard.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Dashboard</a>
+          <a href="./bookings.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Bookings</a>
+          <a href="#" class="flex items-center px-4 py-3 text-gray-700 bg-gray-100 rounded-lg">Payments</a>
+          <a href="./statistics.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Statistic</a>
+          <a href="./team.html" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg">Teams</a>
+        </nav>
+        <div class="px-4 py-6 border-t">
+          <a href="#" class="flex items-center px-4 py-3 text-white hover:bg-[#78B3CE] rounded-lg w-full">Logout</a>
+        </div>
+      </div>
+    </aside>
+      <div class="lg:pl-64">
+         <header class="bg-white shadow-sm">
+            <div class="flex items-center justify-between px-6 py-4">
+               <button class="lg:hidden p-2 rounded-md hover:bg-gray-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-x h-6 w-6">
+                     <path d="M18 6 6 18"></path>
+                     <path d="m6 6 12 12"></path>
+                  </svg>
+               </button>
+               <div class="flex-1 max-w-xl ml-6">
+                  <div class="relative">
+                     <input type="text" id="search" placeholder="Search for rooms..."
+                        class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  </div>
+               </div>
+               <div class="flex items-center space-x-4">
+                  <button class="p-2 rounded-lg hover:bg-gray-100 relative">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-bell h-6 w-6 text-gray-600">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                     </svg>
+                     <span class="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+                  </button>
+                  <img src="https://api.dicebear.com/9.x/thumbs/svg?seed=orijaaaa" alt="Profile"
+                     class="h-8 w-8 rounded-full">
+               </div>
+            </div>
+         </header>
+         <!-- Top Stats Cards -->
+         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
+            <div class="bg-white rounded-lg shadow p-6">
+               <div class="flex items-center justify-between">
+                  <div>
+                     <p class="text-gray-500 text-sm">Total Pendapatan</p>
+                     <h3 class="text-xs font-bold text-gray-900">Rp 10.000.000</h3>
+                  </div>
+                  <div class="bg-green-100 p-3 rounded-full">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                  </div>
+               </div>
+               <p class="text-green-500 text-sm mt-2">+8% dari bulan sebelumnya</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+               <div class="flex items-center justify-between">
+                  <div>
+                     <p class="text-gray-500 text-sm">Total Transaksi</p>
+                     <h3 class="text-2xl font-bold text-gray-900">95</h3>
+                  </div>
+                  <div class="bg-blue-100 p-3 rounded-full">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                     </svg>
+                  </div>
+               </div>
+               <p class="text-blue-500 text-sm mt-2">+12% dari bulan sebelumnya</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+               <div class="flex items-center justify-between">
+                  <div>
+                     <p class="text-gray-500 text-sm">keberhasilan</p>
+                     <h3 class="text-2xl font-bold text-gray-900">95%</h3>
+                  </div>
+                  <div class="bg-yellow-100 p-3 rounded-full">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                     </svg>
+                  </div>
+               </div>
+               <p class="text-yellow-500 text-sm mt-2">+2% dari bulan sebelumnya</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+               <div class="flex items-center justify-between">
+                  <div>
+                     <p class="text-gray-500 text-sm">Rata-rata Pendapatan</p>
+                     <h3 class="text-sm font-bold text-gray-900">Rp 5.000.000</h3>
+                  </div>
+                  <div class="bg-purple-100 p-3 rounded-full">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                           d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                     </svg>
+                  </div>
+               </div>
+               <p class="text-purple-500 text-sm mt-2">+5% dari bulan sebelumnya</p>
+            </div>
+         </div>
+         <!-- Main Content -->
+         <div class="p-6 space-y-6">
+            <div class="bg-white rounded-lg shadow">
+               <!-- Header -->
+               <div class="px-6 py-4 border-b flex justify-between items-center">
+                  <div>
+                     <h2 class="text-lg font-semibold">Daftar Transaksi</h2>
+                     <p class="text-sm text-gray-500">Kelola dan lacak pembayaran Anda</p>
+                  </div>
+                  <div class="flex space-x-4">
+                     <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search transactions..."
+                           class="pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                           class="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none"
+                           viewBox="0 0 24 24" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                     </div>
+                     <select id="statusFilter"
+                        class="border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Semua</option>
+                        <option value="completed">Selesai</option>
+                        <option value="pending">Menunggu</option>
+                        <option value="failed">Gagal</option>
+                     </select>
+                     <button onclick="showNewPaymentModal()"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                        Pembayaran Baru
+                     </button>
+                  </div>
+               </div>
+               <!-- Table -->
+               <div class="p-6">
+                  <div class="overflow-x-auto">
+                     <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                           <tr>
+                              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                                 onclick="sortTable('date')">
+                                 Tanggal ↕
+                              </th>
+                              <th
+                                 class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                 Metode
+                              </th>
+                              <th
+                                 class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                 Nama Pengguna
+                              </th>
+                              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                                 onclick="sortTable('amount')">
+                                 Jumlah ↕
+                              </th>
+                              <th
+                                 class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                 Status
+                              </th>
+                              <th
+                                 class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                 Aksi
+                              </th>
+                           </tr>
+                        </thead>
+                        <tbody id="transactionTable" class="bg-white divide-y divide-gray-200">
+                           <!-- Table rows will be dynamically populated -->
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- Pagination -->
+                  <div class="flex items-center justify-between mt-6">
+                     <p class="text-sm text-gray-700">
+                        Tampilan <span id="startRange">1</span> sampai <span id="endRange">10</span> dari
+                        <span id="totalEntries">50</span> entri
+                     </p>
+                     <div class="flex space-x-2">
+                        <button onclick="previousPage()"
+                           class="px-3 py-1 border rounded hover:bg-gray-100">Sebelumnya</button>
+                        <button onclick="nextPage()" class="px-3 py-1 border rounded hover:bg-gray-100">Selanjutnya</button>
+                     </div>
+                  </div>
+               </div>
+               <!-- New Payment Modal -->
+               <div id="newPaymentModal"
+                  class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4">
+                  <div class="bg-white rounded-lg p-6 w-full max-w-md mx-auto">
+                     <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold">Pembayaran Baru</h3>
+                        <button onclick="hideNewPaymentModal()" class="text-gray-500 hover:text-gray-700">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                 d="M6 18L18 6M6 6l12 12" />
+                           </svg>
+                        </button>
+                     </div>
+                     <form id="newPaymentForm" class="space-y-4">
+                        <div>
+                           <label class="block text-sm font-medium text-gray-700">Nama Pengguna</label>
+                           <input type="text" required class="mt-1 block w-full border rounded-md shadow-sm p-2">
+                        </div>
+                        <div>
+                           <label class="block text-sm font-medium text-gray-700">Jumlah</label>
+                           <input type="number" required class="mt-1 block w-full border rounded-md shadow-sm p-2">
+                        </div>
+                        <div>
+                           <label class="block text-sm font-medium text-gray-700">Saluran Pembayaran</label>
+                           <select class="mt-1 block w-full border rounded-md shadow-sm p-2">
+                              <option>Credit Card</option>
+                              <option>PayPal</option>
+                              <option>Bank Transfer</option>
+                           </select>
+                        </div>
+                        <div class="flex justify-end space-x-3">
+                           <button type="button" onclick="hideNewPaymentModal()"
+                              class="px-4 py-2 border rounded-md hover:bg-gray-100">
+                              Batal
+                           </button>
+                           <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                              Kirim Pembayaran
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-white rounded-lg shadow">
+               <div class="p-6 border-b">
+                  <h2 class="text-xl font-semibold">Transaksi Terkini</h2>
+                  <div class="mt-4 flex flex-wrap gap-4">
+                     <button class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200 transition">
+                        Hari Ini
+                     </button>
+                     <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200 transition">
+                        Minggu Ini
+                     </button>
+                     <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-full hover:bg-gray-200 transition">
+                        Bulan Ini
+                     </button>
+                     <div class="ml-auto flex gap-4">
+                        <button id="exportReport"
+                           class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition flex items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                              fill="currentColor">
+                              <path fill-rule="evenodd"
+                                 d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                           Ekspor Laporan
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <!-- Transaction Analytics Cards -->
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                  <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white">
+                     <div class="flex justify-between items-start">
+                        <div>
+                           <p class="text-blue-100">Total Transaksi</p>
+                           <h3 class="text-3xl font-bold mt-2">2,584</h3>
+                           <p class="text-blue-100 mt-2">+12.5% dari bulan sebelumnya</p>
+                        </div>
+                        <div class="bg-blue-400 rounded-lg p-3">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                 d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="mt-6">
+                        <div class="bg-blue-400 bg-opacity-50 rounded-full h-2">
+                           <div class="bg-white rounded-full h-2 w-2/3"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+                     <div class="flex justify-between items-start">
+                        <div>
+                           <p class="text-purple-100">Tingkat Keberhasilan</p>
+                           <h3 class="text-3xl font-bold mt-2">98.2%</h3>
+                           <p class="text-purple-100 mt-2">+2.1% dari bulan sebelumnya</p>
+                        </div>
+                        <div class="bg-purple-400 rounded-lg p-3">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="mt-6">
+                        <div class="bg-purple-400 bg-opacity-50 rounded-full h-2">
+                           <div class="bg-white rounded-full h-2 w-4/5"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl p-6 text-white">
+                     <div class="flex justify-between items-start">
+                        <div>
+                           <p class="text-green-100">Jumlah Rata-Rata</p>
+                           <h3 class="text-3xl font-bold mt-2">Rp 5.2M</h3>
+                           <p class="text-green-100 mt-2">+8.3% dari bulan sebelumnya</p>
+                        </div>
+                        <div class="bg-green-400 rounded-lg p-3">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                 d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="mt-6">
+                        <div class="bg-green-400 bg-opacity-50 rounded-full h-2">
+                           <div class="bg-white rounded-full h-2 w-3/4"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- Transaction Timeline -->
+               <div class="p-6 border-t">
+                  <h3 class="text-lg font-semibold mb-4">Lini Waktu Transaksi</h3>
+                  <div class="space-y-6">
+                     <div class="flex items-center">
+                        <div class="flex flex-col items-center">
+                           <div class="bg-blue-500 rounded-full h-8 w-8 flex items-center justify-center">
+                              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                              </svg>
+                           </div>
+                           <div class="h-full border-l border-gray-200 flex-grow ml-4"></div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                           <div class="bg-white p-4 rounded-lg border">
+                              <div class="flex justify-between items-center">
+                                 <div>
+                                    <h4 class="font-semibold">Pembayaran Baru</h4>
+                                    <p class="text-sm text-gray-500">Dari Amanda Bello</p>
+                                 </div>
+                                 <span class="text-green-500 font-semibold">+Rp 1,500,000</span>
+                              </div>
+                              <p class="text-sm text-gray-600 mt-2">Transaksi ID: #TRX-123456</p>
+                           </div>
+                        </div>
+                        <div class="ml-4 text-sm text-gray-500">
+                           2 menit yang lalu
+                        </div>
+                     </div>
+                     <div class="flex items-center">
+                        <div class="flex flex-col items-center">
+                           <div class="bg-yellow-500 rounded-full h-8 w-8 flex items-center justify-center">
+                              <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                           </div>
+                           <div class="h-full border-l border-gray-200 flex-grow ml-4"></div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                           <div class="bg-white p-4 rounded-lg border">
+                              <div class="flex justify-between items-center">
+                                 <div>
+                                    <h4 class="font-semibold">Pembayaran Tertunda</h4>
+                                    <p class="text-sm text-gray-500">Dari Budi Santoso</p>
+                                 </div>
+                                 <span class="text-yellow-500 font-semibold">Rp 2,000,000</span>
+                              </div>
+                              <p class="text-sm text-gray-600 mt-2">Menunggu konfirmasi bank</p>
+                           </div>
+                        </div>
+                        <div class="ml-4 text-sm text-gray-500">
+                           15 menit yang lalu
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-white rounded-lg shadow">
+               <div class="p-6 border-b">
+                  <h2 class="text-xl font-semibold">Analisis Metode Pembayaran</h2>
+               </div>
+               <div class="p-6">
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                     <div class="p-4 border rounded-lg">
+                        <div class="flex items-center justify-between">
+                           <div>
+                              <p class="text-gray-500">Kartu Kredit</p>
+                              <h4 class="text-2xl font-bold mt-2">45%</h4>
+                           </div>
+                           <div class="bg-blue-100 p-3 rounded-full">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="mt-4">
+                           <div class="h-2 bg-gray-200 rounded-full">
+                              <div class="h-2 bg-blue-500 rounded-full" style="width: 45%"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="p-4 border rounded-lg">
+                        <div class="flex items-center justify-between">
+                           <div>
+                              <p class="text-gray-500">Transfer bank</p>
+                              <h4 class="text-2xl font-bold mt-2">35%</h4>
+                           </div>
+                           <div class="bg-green-100 p-3 rounded-full">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="mt-4">
+                           <div class="h-2 bg-gray-200 rounded-full">
+                              <div class="h-2 bg-green-500 rounded-full" style="width: 35%"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="p-4 border rounded-lg">
+                        <div class="flex items-center justify-between">
+                           <div>
+                              <p class="text-gray-500">E-Wallet</p>
+                              <h4 class="text-2xl font-bold mt-2">20%</h4>
+                           </div>
+                           <div class="bg-purple-100 p-3 rounded-full">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                              </svg>
+                           </div>
+                        </div>
+                        <div class="mt-4">
+                           <div class="h-2 bg-gray-200 rounded-full">
+                              <div class="h-2 bg-purple-500 rounded-full" style="width: 20%"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <script>
+
+               // Sample data
+               const transactionData = {
+                  daily: {
+                     transactions: 2584,
+                     growth: 12.5,
+                     successRate: 98.2,
+                     averageAmount: 5200000
+                  },
+                  weekly: {
+                     transactions: 15420,
+                     growth: 8.3,
+                     successRate: 97.5,
+                     averageAmount: 4800000
+                  },
+                  monthly: {
+                     transactions: 45250,
+                     growth: 15.2,
+                     successRate: 96.8,
+                     averageAmount: 5500000
+                  }
+               };
+
+
+
+               // Timeline data
+               const timelineData = [
+                  {
+                     id: 1,
+                     type: 'payment',
+                     title: 'Pembayaran Baru Diterima',
+                     from: 'Amanda Bello',
+                     amount: 1500000,
+                     transactionId: 'TRX-123456',
+                     time: '2 menit yang lalu',
+                     status: 'success'
+                  },
+                  {
+                     id: 2,
+                     type: 'pending',
+                     title: 'Pembayaran Tertunda',
+                     from: 'Budi Santoso',
+                     amount: 2000000,
+                     note: 'Menunggu konfirmasi bank',
+                     time: '15 menit yang lalu',
+                     status: 'pending'
+                  }
+                  // Add more timeline items as needed
+               ];
+
+               // Sample data
+               const transactions = [
+                  { date: '2024-12-15', channel: 'Credit Card', userName: 'Amanda Bello', amount: 300000, status: 'completed' },
+                  { date: '2024-12-16', channel: 'PayPal', userName: 'Budi Santoso', amount: 500000, status: 'pending' },
+                  { date: '2024-11-17', channel: 'Bank Transfer', userName: 'Kartika Permata', amount: 600000, status: 'completed' },
+                  { date: '2025-01-18', channel: 'Credit Card', userName: 'Satria Jaya', amount: 500000, status: 'failed' },
+                  { date: '2025-01-19', channel: 'PayPal', userName: 'Sartika Canddra', amount: 600000, status: 'completed' },
+               ];
+
+               let currentSort = { field: null, ascending: true };
+               let currentPage = 1;
+               const itemsPerPage = 10;
+
+               // Initialize
+               document.addEventListener('DOMContentLoaded', () => {
+                  renderTransactions();
+                  setupEventListeners();
+                  updatePaginationInfo();
+               });
+
+               function setupEventListeners() {
+                  document.getElementById('searchInput').addEventListener('input', renderTransactions);
+                  document.getElementById('statusFilter').addEventListener('change', renderTransactions);
+                  document.getElementById('newPaymentForm').addEventListener('submit', handleNewPayment);
+               }
+
+               function renderTransactions() {
+                  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                  const statusFilter = document.getElementById('statusFilter').value.toLowerCase();
+
+                  let filtered = transactions.filter(transaction => {
+                     const matchesSearch = Object.values(transaction).some(value =>
+                        String(value).toLowerCase().includes(searchTerm)
+                     );
+                     const matchesStatus = !statusFilter || transaction.status === statusFilter;
+                     return matchesSearch && matchesStatus;
+                  });
+
+                  // Apply sorting
+                  if (currentSort.field) {
+                     filtered.sort((a, b) => {
+                        let comparison = 0;
+                        if (currentSort.field === 'amount') {
+                           comparison = a.amount - b.amount;
+                        } else if (currentSort.field === 'date') {
+                           comparison = new Date(a.date) - new Date(b.date);
+                        }
+                        return currentSort.ascending ? comparison : -comparison;
+                     });
+                  }
+
+                  // Apply pagination
+                  const startIndex = (currentPage - 1) * itemsPerPage;
+                  const paginatedTransactions = filtered.slice(startIndex, startIndex + itemsPerPage);
+
+                  // Render to table
+                  const tableBody = document.getElementById('transactionTable');
+                  tableBody.innerHTML = paginatedTransactions.map(transaction => `
+         <tr class="hover:bg-gray-50">
+         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${formatDate(transaction.date)}</td>
+         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${transaction.channel}</td>
+         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${transaction.userName}</td>
+         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp${transaction.amount.toLocaleString()}</td>
+         <td class="px-6 py-4 whitespace-nowrap">
+         <span class="px-2 py-1 text-xs rounded-full ${getStatusClass(transaction.status)}">
+         ${capitalizeFirst(transaction.status)}
+         </span>
+         </td>
+         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+         <button onclick="viewTransaction('${transaction.date}')" 
+          class="text-blue-600 hover:text-blue-900 mr-4">View</button>
+         <button onclick="downloadTransaction('${transaction.date}')"
+          class="text-gray-600 hover:text-gray-900">Download</button>
+         </td>
+         </tr>
+         `).join('');
+
+                  updatePaginationInfo(filtered.length);
+               }
+
+               function formatDate(dateString) {
+                  const date = new Date(dateString);
+                  return date.toLocaleDateString('en-US', {
+                     month: '2-digit',
+                     day: '2-digit',
+                     year: 'numeric'
+                  });
+               }
+
+               function getStatusClass(status) {
+                  const classes = {
+                     completed: 'bg-green-100 text-green-800',
+                     pending: 'bg-yellow-100 text-yellow-800',
+                     failed: 'bg-red-100 text-red-800'
+                  };
+                  return classes[status] || 'bg-gray-100 text-gray-800';
+               }
+
+               function capitalizeFirst(string) {
+                  return string.charAt(0).toUpperCase() + string.slice(1);
+               }
+
+               function sortTable(field) {
+                  if (currentSort.field === field) {
+                     currentSort.ascending = !currentSort.ascending;
+                  } else {
+                     currentSort = { field, ascending: true };
+                  }
+                  renderTransactions();
+               }
+
+               function updatePaginationInfo(totalItems) {
+                  const startRange = ((currentPage - 1) * itemsPerPage) + 1;
+                  const endRange = Math.min(currentPage * itemsPerPage, totalItems);
+
+                  document.getElementById('startRange').textContent = startRange;
+                  document.getElementById('endRange').textContent = endRange;
+                  document.getElementById('totalEntries').textContent = totalItems;
+               }
+
+               function previousPage() {
+                  if (currentPage > 1) {
+                     currentPage--;
+                     renderTransactions();
+                  }
+               }
+
+               function nextPage() {
+                  const totalPages = Math.ceil(transactions.length / itemsPerPage);
+                  if (currentPage < totalPages) {
+                     currentPage++;
+                     renderTransactions();
+                  }
+               }
+
+               function showNewPaymentModal() {
+                  document.getElementById('newPaymentModal').classList.remove('hidden');
+               }
+
+               function hideNewPaymentModal() {
+                  document.getElementById('newPaymentModal').classList.add('hidden');
+                  document.getElementById('newPaymentForm').reset();
+               }
+
+               function handleNewPayment(event) {
+                  event.preventDefault();
+                  const form = event.target;
+                  const newTransaction = {
+                     date: new Date().toISOString().split('T')[0],
+                     userName: form.elements[0].value,
+                     amount: parseFloat(form.elements[1].value),
+                     channel: form.elements[2].value,
+                     status: 'pending'
+                  };
+
+                  transactions.unshift(newTransaction);
+                  hideNewPaymentModal();
+                  renderTransactions();
+
+                  // Show success notification
+                  showNotification('Pembayaran berhasil ditambahkan!');
+               }
+
+               function showNotification(message) {
+                  const notification = document.createElement('div');
+                  notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-transform duration-300 ease-in-out';
+                  notification.textContent = message;
+                  document.body.appendChild(notification);
+
+                  setTimeout(() => {
+                     notification.remove();
+                  }, 3000);
+               }
+
+               function viewTransaction(date) {
+                  const transaction = transactions.find(t => t.date === date);
+                  // Implement view functionality
+                  console.log('Viewing transaction:', transaction);
+               }
+
+               function downloadTransaction(date) {
+                  const transaction = transactions.find(t => t.date === date);
+                  // Implement download functionality
+                  console.log('Downloading transaction:', transaction);
+               }
+
+               // Data visualizations using Chart.js
+               document.addEventListener('DOMContentLoaded', function () {
+                  // Initialize filters
+                  initializeTimeFilters();
+
+                  // Initialize charts
+                  initializeCharts();
+
+                  // Initialize timeline
+                  updateTimeline();
+
+                  // Initialize payment methods analytics
+                  updatePaymentMethodsAnalytics();
+               });
+
+               function initializeTimeFilters() {
+                  const timeButtons = document.querySelectorAll('[data-time-filter]');
+                  timeButtons.forEach(button => {
+                     button.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        timeButtons.forEach(btn => {
+                           btn.classList.remove('bg-blue-100', 'text-blue-600');
+                           btn.classList.add('bg-gray-100', 'text-gray-600');
+                        });
+
+                        // Add active class to clicked button
+                        button.classList.remove('bg-gray-100', 'text-gray-600');
+                        button.classList.add('bg-blue-100', 'text-blue-600');
+
+                        // Update dashboard data based on selected time period
+                        const timePeriod = button.dataset.timeFilter;
+                        updateDashboardData(timePeriod);
+                     });
+                  });
+               }
+
+               function updateDashboardData(timePeriod) {
+                  const data = transactionData[timePeriod];
+
+                  // Update statistics
+                  document.getElementById('totalTransactions').textContent = data.transactions.toLocaleString();
+                  document.getElementById('transactionGrowth').textContent = `+${data.growth}% from last ${timePeriod}`;
+                  document.getElementById('successRate').textContent = `${data.successRate}%`;
+                  document.getElementById('averageAmount').textContent = `Rp ${(data.averageAmount / 1000000).toFixed(1)}M`;
+
+                  // Update charts
+                  updateCharts(timePeriod);
+               }
+
+               function initializeCharts() {
+                  // Transaction Volume Chart
+                  const transactionCtx = document.getElementById('transactionChart').getContext('2d');
+                  const transactionChart = new Chart(transactionCtx, {
+                     type: 'line',
+                     data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun'],
+                        datasets: [{
+                           label: 'Transaction Volume',
+                           data: [1200, 1900, 1500, 2100, 2400, 2584],
+                           borderColor: 'rgb(59, 130, 246)',
+                           tension: 0.4,
+                           fill: false
+                        }]
+                     },
+                     options: {
+                        responsive: true,
+                        plugins: {
+                           legend: {
+                              display: false
+                           }
+                        },
+                        scales: {
+                           y: {
+                              beginAtZero: true
+                           }
+                        }
+                     }
+                  });
+
+                  // Payment Methods Chart
+                  const methodsCtx = document.getElementById('paymentMethodsChart').getContext('2d');
+                  const methodsChart = new Chart(methodsCtx, {
+                     type: 'doughnut',
+                     data: {
+                        labels: ['Credit Card', 'Bank Transfer', 'E-Wallet'],
+                        datasets: [{
+                           data: [45, 35, 20],
+                           backgroundColor: [
+                              'rgb(59, 130, 246)',
+                              'rgb(34, 197, 94)',
+                              'rgb(168, 85, 247)'
+                           ]
+                        }]
+                     },
+                     options: {
+                        responsive: true,
+                        plugins: {
+                           legend: {
+                              position: 'bottom'
+                           }
+                        }
+                     }
+                  });
+               }
+
+               function updateTimeline() {
+                  const timelineContainer = document.getElementById('transactionTimeline');
+                  timelineContainer.innerHTML = ''; // Clear existing items
+
+                  timelineData.forEach(item => {
+                     const timelineItem = createTimelineItem(item);
+                     timelineContainer.appendChild(timelineItem);
+                  });
+               }
+
+               function createTimelineItem(item) {
+                  const statusColors = {
+                     success: 'bg-green-500',
+                     pending: 'bg-yellow-500',
+                     failed: 'bg-red-500'
+                  };
+
+                  const template = `
+         <div class="flex items-center">
+         <div class="flex flex-col items-center">
+         <div class="${statusColors[item.status]} rounded-full h-8 w-8 flex items-center justify-center">
+         <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+         d="${item.type === 'payment' ? 'M12 6v6m0 0v6m0-6h6m-6 0H6' : 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'}" />
+         </svg>
+         </div>
+         <div class="h-full border-l border-gray-200 flex-grow ml-4"></div>
+         </div>
+         <div class="ml-4 flex-1">
+         <div class="bg-white p-4 rounded-lg border">
+         <div class="flex justify-between items-center">
+         <div>
+         <h4 class="font-semibold">${item.title}</h4>
+         <p class="text-sm text-gray-500">From ${item.from}</p>
+         </div>
+         <span class="${item.status === 'success' ? 'text-green-500' : 'text-yellow-500'} font-semibold">
+         ${item.status === 'success' ? '+' : ''}Rp ${item.amount.toLocaleString()}
+         </span>
+         </div>
+         <p class="text-sm text-gray-600 mt-2">
+         ${item.transactionId ? `Transaction ID: #${item.transactionId}` : item.note}
+         </p>
+         </div>
+         </div>
+         <div class="ml-4 text-sm text-gray-500">
+         ${item.time}
+         </div>
+         </div>
+         `;
+                  const div = document.createElement('div');
+                  div.innerHTML = template.trim();
+                  return div.firstChild;
+               }
+
+               function updatePaymentMethodsAnalytics() {
+                  // Update progress bars
+                  const progressBars = {
+                     creditCard: 45,
+                     bankTransfer: 35,
+                     eWallet: 20
+                  };
+
+                  Object.entries(progressBars).forEach(([method, percentage]) => {
+                     const progressBar = document.querySelector(`#${method}Progress .progress-fill`);
+                     if (progressBar) {
+                        progressBar.style.width = `${percentage}%`;
+                     }
+                  });
+               }
+
+               // Export functionality
+               document.getElementById('exportReport').addEventListener('click', function () {
+                  // Implementation for export functionality
+                  const exportData = {
+                     timestamp: new Date().toISOString(),
+                     statistics: transactionData.daily,
+                     timeline: timelineData,
+                     paymentMethods: {
+                        creditCard: 45,
+                        bankTransfer: 35,
+                        eWallet: 20
+                     }
+                  };
+
+                  // Convert to JSON and create download
+                  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportData, null, 2));
+                  const downloadAnchorNode = document.createElement('a');
+                  downloadAnchorNode.setAttribute("href", dataStr);
+                  downloadAnchorNode.setAttribute("download", "payment_report.json");
+                  document.body.appendChild(downloadAnchorNode);
+                  downloadAnchorNode.click();
+                  downloadAnchorNode.remove();
+               });
+
+               // Real-time updates simulation
+               setInterval(() => {
+                  // Simulate new transaction
+                  const randomAmount = Math.floor(Math.random() * 1000000) + 500000;
+                  const newTransaction = {
+                     id: timelineData.length + 1,
+                     type: 'payment',
+                     title: 'New Payment Received',
+                     from: 'Ilham Kurn',
+                     amount: randomAmount,
+                     transactionId: `TRX-${Math.random().toString(36).substr(2, 6).toUpperCase()}`,
+                     time: 'Baru saja',
+                     status: 'success'
+                  };
+
+                  // Add to timeline data
+                  timelineData.unshift(newTransaction);
+                  if (timelineData.length > 5) timelineData.pop(); // Keep only last 5 items
+
+                  // Update timeline
+                  updateTimeline();
+               }, 60000); // Update every minute
+            </script>
+</body>
+
+</html>

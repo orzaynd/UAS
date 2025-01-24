@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harmony Hall</title>
+    <link href="img/logo.png" rel="icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="flex items-center justify-between bg-white p-2 text-blue-900">
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-1">
+          <i class="fas fa-envelope"></i>
+          <span>Harmony Hall@gmail.com</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <i class="fas fa-phone"></i>
+          <span>+62 895-4029-46153</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-[#213555]">
+      <div class="container mx-auto px-4 py-6">
+        <nav class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center text-2xl font-bold text-white">
+            <img src="./img/logo.png" width="70" height="70" alt="Logo" />
+            <span class="ml-2">Harmony Hall</span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden items-center space-x-6 md:flex">
+            <a href="#" class="text-white hover:text-blue-200">Home</a>
+            <a href="#feature" class="text-white hover:text-blue-200"
+              >Features</a
+            >
+            <a href="#review" class="text-white hover:text-blue-200">Review</a>
+            <a href="#gallery" class="text-white hover:text-blue-200"
+              >Gallery</a
+            >
+            <a href="#contact" class="text-white hover:text-blue-200"
+              >Contact</a
+            >
+            <a
+              href="Order.html"
+              class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+              >Order</a
+            >
+            <a
+              href="login.html"
+              class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+              >Login</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menu-toggle"
+            class="text-white focus:outline-none md:hidden"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mt-4 hidden flex-col space-y-4 md:hidden">
+          <a href="#" class="block text-white hover:text-blue-200">Home</a>
+          <a href="#feature" class="block text-white hover:text-blue-200"
+            >Features</a
+          >
+          <a href="#review" class="block text-white hover:text-blue-200"
+            >Review</a
+          >
+          <a href="#gallery" class="block text-white hover:text-blue-200"
+            >Gallery</a
+          >
+          <a href="#contact" class="block text-white hover:text-blue-200"
+            >Contact</a
+          >
+          <a
+            href="Order.html"
+            class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+            >Order</a
+          >
+          <a
+            href="login.html"
+            class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+            >Login</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen bg-cover bg-center"
+      style="background-image: url('./img/hero1.jpeg')"
+    >
+      <div
+        class="flex h-full items-center justify-start bg-black bg-opacity-50"
+      >
+        <div class="ml-10 max-w-lg px-4 text-left text-white">
+          <h1 class="mb-4 text-5xl font-bold md:text-6xl">Harmony Hall</h1>
+          <p class="md:text-2x2 mb-4 text-xl">
+            <strong>"Rayakan Momen Berharga Anda Bersama Kami"</strong>
+          </p>
+          <p class="md:text-2x2 mb-8 text-xl">
+            Siapkan acara spesial Anda di Harmony Hall, sebuah aula megah yang
+            dirancang untuk menghadirkan keindahan, kenyamanan, dan kesempurnaan
+            dalam setiap momen. Dengan sentuhan elegan dan suasana memukau, kami
+            siap menjadikan setiap perayaan Anda sebagai kenangan yang tak
+            terlupakan.
+          </p>
+          <a
+            href="#feature"
+            class="rounded-lg bg-[#78B3CE] px-6 py-3 font-semibold text-white transition duration-300 hover:bg-blue-700"
+          >
+            Booking
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Mengapa Harus Memilih Aula Kami? -->
+    <section class="py-20" data-aos="fade-up">
+      <div class="container mx-auto p-4">
+        <div class="flex flex-col gap-6 md:flex-row">
+          <!-- First Column -->
+          <div class="flex-1 rounded-lg bg-[#78B3CE] p-3 text-white shadow-lg">
+            <h2 class="mb-4 text-3xl font-bold">
+              Mengapa Harus Memilih Harmony Hall?
+            </h2>
+            <p>
+              harmony hall adalah tempat yang sempurna untuk berbagai acara,
+              menawarkan fasilitas berkualitas tinggi dengan teknologi mutakhir.
+              Dengan pengalaman lebih dari 20 tahun, kami berkomitmen untuk
+              menyediakan layanan terbaik bagi setiap acara Anda.
+            </p>
+          </div>
+          <!-- Second Column -->
+          <div class="flex-1 rounded-lg bg-white p-3 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <i class="fas fa-chart-line text-3xl text-[#78B3CE]"></i>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold text-blue-900">
+              Fasilitas yang Terpercaya, Untuk Anda
+            </h3>
+            <p class="text-gray-700">
+              Dengan fasilitas yang terpercaya, aula kami memastikan setiap
+              acara berjalan dengan lancar dan sukses.
+            </p>
+          </div>
+          <!-- Third Column -->
+          <div class="flex-1 rounded-lg bg-white p-3 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <i class="fas fa-gem text-3xl text-[#78B3CE]"></i>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold text-blue-900">
+              Keunggulan di Setiap Layanan
+            </h3>
+            <p class="text-gray-700">
+              Selalu memberikan layanan terbaik yang terlihat jelas dalam setiap
+              aspek penyelenggaraan acara, memastikan pengalaman yang luar biasa
+              bagi semua tamu.
+            </p>
+          </div>
+          <!-- Fourth Column -->
+          <div class="flex-1 rounded-lg bg-white p-3 shadow-lg">
+            <div class="mb-4 flex items-center">
+              <i class="fas fa-diagnoses text-3xl text-[#78B3CE]"></i>
+            </div>
+            <h3 class="mb-4 text-2xl font-bold text-blue-900">
+              Teknologi Terkini untuk Acara yang Sempurna
+            </h3>
+            <p class="text-gray-700">
+              Kami memastikan setiap acara dilengkapi dengan peralatan modern
+              dan protokol standar terbaik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- JavaScript -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      // Toggle mobile menu visibility
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <!-- Layanan Kami -->
+    <section id="feature" class="bg-white" data-aos="fade-up">
+      <div class="container mx-auto px-4">
+        <h2
+          class="mb-12 text-center text-3xl font-bold text-blue-900 md:text-4xl"
+        >
+          Layanan Kami
+        </h2>
+
+        <div
+          class="flex flex-col items-start justify-between md:flex-row flex-wrap w-full my-12"
+        >
+          <!-- Text Section -->
+          <div class="mb-6 md:mb-0 md:w-1/2">
+            <h3 class="mb-4 text-2xl font-bold">Fasilitas Terbaik</h3>
+            <p class="mb-4 text-gray-600">
+              Kami dengan bangga menawarkan berbagai ruang yang dirancang dengan
+              cermat, dilengkapi dengan teknologi modern dan desain elegan untuk
+              memastikan setiap acara Anda berjalan sukses. Apakah Anda
+              membutuhkan ruang pertemuan yang intim dan nyaman untuk rapat
+              bisnis kecil, atau aula yang luas dan megah untuk seminar,
+              konferensi, atau acara besar lainnya, kami memiliki pilihan yang
+              tepat untuk memenuhi kebutuhan Anda
+            </p>
+            <p class="mb-4 text-gray-600">
+              Apakah Anda merencanakan seminar, workshop, atau acara khusus?
+              Kami siap membantu Anda menciptakan pengalaman yang tak
+              terlupakan.
+            </p>
+          </div>
+
+          <div class="relative overflow-hidden w-full md:w-1/2">
+            <div id="carousel" class="flex transition-transform duration-700">
+              <!-- Slide 1 -->
+              <div class="min-w-full flex items-center justify-center">
+                <div
+                  class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src="./img/Gallery1.jpg"
+                    alt="Lab komputer"
+                    class="h-40 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <h2 class="mb-2 text-xl font-bold">Lab Komputer</h2>
+                    <p class="mb-4 text-gray-600">
+                      Laboratorium futuristik ini dirancang dengan teknologi
+                      canggih untuk mendukung berbagai kegiatan penelitian dan
+                      pengembangan...
+                    </p>
+                    <p class="mb-4 text-lg font-bold text-[#78B3CE]">
+                      Mulai dari RP 250.000 per jam
+                    </p>
+                    <a
+                      href="Order.html"
+                      class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-center text-white transition-colors hover:bg-blue-100"
+                      >Pesan sekarang</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="min-w-full flex items-center justify-center">
+                <div
+                  class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src="./img/gallery9.jpeg"
+                    alt="Lab komputer 2"
+                    class="h-40 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <h2 class="mb-2 text-xl font-bold">Aula Khusus</h2>
+                    <p class="mb-4 text-gray-600">
+                      Aula modern dan nyaman ini tersedia untuk disewakan, cocok
+                      untuk berbagai acara seperti seminar, workshop...
+                    </p>
+                    <p class="mb-4 text-lg font-bold text-[#78B3CE]">
+                      Mulai dari IDR 150.000 per jam
+                    </p>
+                    <a
+                      href="Order.html"
+                      class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-center text-white transition-colors hover:bg-blue-100"
+                      >Pesan sekarang</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="min-w-full flex items-center justify-center">
+                <div
+                  class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src="./img/gallery6.jpeg"
+                    alt="Aula Resmi"
+                    class="h-40 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <h2 class="mb-2 text-xl font-bold">Aula Resmi</h2>
+                    <p class="mb-4 text-gray-600">
+                      Aula elegan dengan desain interior kayu ini siap disewakan
+                      untuk berbagai keperluan acara...
+                    </p>
+                    <p class="mb-4 text-lg font-bold text-[#78B3CE]">
+                      Mulai dari IDR 200.000 per jam
+                    </p>
+                    <a
+                      href="Order.html"
+                      class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-center text-white transition-colors hover:bg-blue-100"
+                      >Pesan sekarang</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-full flex items-center justify-center">
+                <div
+                  class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src="./img/gallery10.png"
+                    alt="Ruang Pertemuan"
+                    class="h-40 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <h2 class="mb-2 text-xl font-bold">Aula Serbaguna</h2>
+                    <p class="mb-4 text-gray-600">
+                      Ruang pertemuan yang nyaman dan dilengkapi dengan
+                      teknologi terkini untuk mendukung presentasi dan
+                      diskusi...
+                    </p>
+                    <p class="mb-4 text-lg font-bold text-[#78B3CE]">
+                      Mulai dari IDR 100.000 per jam
+                    </p>
+                    <a
+                      href="Order.html"
+                      class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-center text-white transition-colors hover:bg-blue-100"
+                      >Pesan sekarang</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="min-w-full flex items-center justify-center">
+                <div
+                  class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src="./img/gallery8.jpeg"
+                    alt="Laboratorium"
+                    class="h-40 w-full object-cover"
+                  />
+                  <div class="p-5">
+                    <h2 class="mb-2 text-xl font-bold">Laboratorium</h2>
+                    <p class="mb-4 text-gray-600">
+                      Ruang serbaguna yang fleksibel untuk berbagai jenis acara,
+                      dari pertemuan kecil hingga acara besar...
+                    </p>
+                    <p class="mb-4 text-lg font-bold text-[#78B3CE]">
+                      Mulai dari IDR 300.000 per jam
+                    </p>
+                    <a
+                      href="Order.html"
+                      class="block rounded-lg bg-[#78B3CE] px-4 py-2 text-center text-white transition-colors hover:bg-blue-100"
+                      >Pesan sekarang</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="bg-white py-10" data-aos="fade-up">
+      <div class="px-4 md:px-6">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-lg bg-white p-4 text-center shadow-lg">
+            <div class="mb-4 flex justify-center">
+              <div class="rounded-full bg-[#78B3CE] p-3">
+                <i class="fas fa-door-open text-xl text-white"></i>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-blue-900">10</div>
+            <div class="text-base text-blue-900">Ruangan Tersedia</div>
+          </div>
+          <div class="rounded-lg bg-white p-4 text-center shadow-lg">
+            <div class="mb-4 flex justify-center">
+              <div class="rounded-full bg-[#78B3CE] p-3">
+                <i class="fas fa-calendar-check text-xl text-white"></i>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-blue-900">25</div>
+            <div class="text-base text-blue-900">Ruangan Dipesan</div>
+          </div>
+          <div class="rounded-lg bg-white p-4 text-center shadow-lg">
+            <div class="mb-4 flex justify-center">
+              <div class="rounded-full bg-[#78B3CE] p-3">
+                <i class="fas fa-users text-xl text-white"></i>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-blue-900">95</div>
+            <div class="text-base text-blue-900">Total Transaksi</div>
+          </div>
+          <div class="rounded-lg bg-white p-4 text-center shadow-lg">
+            <div class="mb-4 flex justify-center">
+              <div class="rounded-full bg-[#78B3CE] p-3">
+                <i class="fas fa-star text-xl text-white"></i>
+              </div>
+            </div>
+            <div class="text-3xl font-bold text-blue-900">8</div>
+            <div class="text-base text-blue-900">Ruangan Favorit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <section id="review" class="bg-gray-100 py-10" data-aos="fade-up">
+      <div class="mx-auto max-w-7xl px-5 space-y-12">
+        <h2 class="mb-8 text-center text-4xl font-bold text-blue-900">
+          Testimoni
+        </h2>
+        <p class="text-1xl text-center font-bold">
+          Suara Pengalaman, Bukti Nyata dari Mereka yang Telah Menyewa dan
+          Merasakan Kenyamanan Ruangan Kami
+        </p>
+        <div class="relative overflow-hidden">
+          <div
+            id="carousel-review"
+            class="flex transition-transform duration-700"
+          >
+            <!-- Slide 1 -->
+            <div class="min-w-full flex items-center justify-center">
+              <div
+                class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div class="flex items-center">
+                  <img
+                    alt="Profile picture of Prof. Kim Jun Wan"
+                    class="mr-4 h-24 w-24 rounded-full"
+                    height="100"
+                    src="img/testimonials-2.jpeg"
+                    width="100"
+                  />
+                  <div>
+                    <h2 class="text-xl font-bold">Nam Koong Min</h2>
+                    <p class="text-gray-600">CEO</p>
+                  </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                  "Ruangan sangat mendukung presentasi saya. Fasilitas lengkap,
+                  Wi-Fi lancar, dan suasana profesional. Lokasinya mudah
+                  dijangkau, pasti akan menyewa lagi!"
+                </p>
+                <p class="mt-1 text-gray-700">
+                  Ulasan:
+                  <span class="text-yellow-500">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  (4.9 dari 5)
+                </p>
+                <div class="mt-4 flex space-x-2">
+                  <a class="text-gray-500" href="#"
+                    ><i class="fas fa-times"></i
+                  ></a>
+                  <a class="text-blue-500" href="#"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a class="text-purple-500" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a class="text-blue-700" href="#"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="min-w-full flex items-center justify-center">
+              <div
+                class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div class="flex items-center">
+                  <img
+                    alt="Profile picture of Prof. Kim Jun Wan"
+                    class="mr-4 h-24 w-24 rounded-full"
+                    height="100"
+                    src="img/testimoni1.jpeg"
+                    width="100"
+                  />
+                  <div>
+                    <h2 class="text-xl font-bold">Abun Sungkar</h2>
+                    <p class="text-gray-600">Actor</p>
+                  </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                  "Fasilitas lengkap, Wi-Fi lancar, dan suasana profesional. Lokasinya mudah dijangkau, pasti akan menyewa lagi!"
+                </p>
+                <p class="mt-1 text-gray-700">
+                  Ulasan:
+                  <span class="text-yellow-500">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  (4.9 dari 5)
+                </p>
+                <div class="mt-4 flex space-x-2">
+                  <a class="text-gray-500" href="#"
+                    ><i class="fas fa-times"></i
+                  ></a>
+                  <a class="text-blue-500" href="#"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a class="text-purple-500" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a class="text-blue-700" href="#"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="min-w-full flex items-center justify-center">
+              <div
+                class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div class="flex items-center">
+                  <img
+                    alt="Profile picture of Prof. Kim Jun Wan"
+                    class="mr-4 h-24 w-24 rounded-full"
+                    height="100"
+                    src="img/testimonials-1.jpeg"
+                    width="100"
+                  />
+                  <div>
+                    <h2 class="text-xl font-bold">Toriq</h2>
+                    <p class="text-gray-600">Kepala Sekolah</p>
+                  </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                  "Ruangan sangat mendukung presentasi saya. Fasilitas lengkap,
+                  Wi-Fi lancar, dan suasana profesional. Lokasinya mudah
+                  dijangkau, pasti akan menyewa lagi!"
+                </p>
+                <p class="mt-1 text-gray-700">
+                  Ulasan:
+                  <span class="text-yellow-500">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  (4.9 dari 5)
+                </p>
+                <div class="mt-4 flex space-x-2">
+                  <a class="text-gray-500" href="#"
+                    ><i class="fas fa-times"></i
+                  ></a>
+                  <a class="text-blue-500" href="#"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a class="text-purple-500" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a class="text-blue-700" href="#"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="min-w-full flex items-center justify-center">
+              <div
+                class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div class="flex items-center">
+                  <img
+                    alt="Profile picture of Prof. Kim Jun Wan"
+                    class="mr-4 h-24 w-24 rounded-full"
+                    height="100"
+                    src="img/Tiara.webp"
+                    width="100"
+                  />
+                  <div>
+                    <h2 class="text-xl font-bold">Tiara Andini</h2>
+                    <p class="text-gray-600">Actris</p>
+                  </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                  "Ruangan sangat mendukung presentasi saya. Fasilitas lengkap,
+                  Wi-Fi lancar, dan suasana profesional. Lokasinya mudah
+                  dijangkau, pasti akan menyewa lagi!"
+                </p>
+                <p class="mt-1 text-gray-700">
+                  Ulasan:
+                  <span class="text-yellow-500">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  (4.9 dari 5)
+                </p>
+                <div class="mt-4 flex space-x-2">
+                  <a class="text-gray-500" href="#"
+                    ><i class="fas fa-times"></i
+                  ></a>
+                  <a class="text-blue-500" href="#"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a class="text-purple-500" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a class="text-blue-700" href="#"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 1 -->
+            <div class="min-w-full flex items-center justify-center">
+              <div
+                class="w-full transform overflow-hidden rounded-lg bg-white px-4 shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div class="flex items-center">
+                  <img
+                    alt="Profile picture of Prof. Kim Jun Wan"
+                    class="mr-4 h-24 w-24 rounded-full"
+                    height="100"
+                    src="img/maudy.jpg"
+                    width="100"
+                  />
+                  <div>
+                    <h2 class="text-xl font-bold">Maudy</h2>
+                    <p class="text-gray-600">Actris</p>
+                  </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                  "Ruangan sangat mendukung presentasi saya. Fasilitas lengkap,
+                  Wi-Fi lancar, dan suasana profesional. Lokasinya mudah
+                  dijangkau, pasti akan menyewa lagi!"
+                </p>
+                <p class="mt-1 text-gray-700">
+                  Ulasan:
+                  <span class="text-yellow-500">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  (4.9 dari 5)
+                </p>
+                <div class="mt-4 flex space-x-2">
+                  <a class="text-gray-500" href="#"
+                    ><i class="fas fa-times"></i
+                  ></a>
+                  <a class="text-blue-500" href="#"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                  <a class="text-purple-500" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a class="text-blue-700" href="#"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-white py-20" data-aos="fade-up">
+      <div class="px-0">
+        <h2
+          class="mb-12 text-center text-3xl font-bold text-blue-900 md:text-4xl"
+        >
+          Gallery
+        </h2>
+        <div class="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery10.png"
+              alt="Gallery Image 1"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery2.jpg"
+              alt="Gallery Image 2"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery8.jpeg"
+              alt="Gallery Image 3"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery4.jpg"
+              alt="Gallery Image 4"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery5.jpeg"
+              alt="Gallery Image 5"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery6.jpeg"
+              alt="Gallery Image 6"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery7.jpeg"
+              alt="Gallery Image 7"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+          <div
+            class="transform overflow-hidden rounded-sm shadow-lg transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="./img/gallery9.jpeg"
+              alt="Gallery Image 8"
+              class="h-60 w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Contact Section with Full-Width Google Map -->
+    <section id="contact" class="p-0" data-aos="fade-up">
+      <div class="h-64 w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.917144634073!2d126.8128493153101!3d37.55851497979956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9b1b1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2s260%20Gonghang-daero%2C%20Gangseo-gu%2C%20Seoul%2C%20Korea%20Selatan!5e0!3m2!1sen!2sus!4v1633021234567!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="container mx-auto p-4" data-aos="fade-up">
+        <div class="flex flex-wrap">
+          <!-- Contact Information -->
+          <div class="w-full p-4 md:w-1/2">
+            <div class="mb-4 flex items-start">
+              <div class="rounded-full bg-[#78B3CE] p-3 text-white">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-bold">Alamat</h3>
+                <p>260 Gonghang-daero, Gangseo-gu, Seoul, Korea Selatan.</p>
+              </div>
+            </div>
+            <div class="mb-4 flex items-start">
+              <div class="rounded-full bg-[#78B3CE] p-3 text-white">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-bold">No telepon</h3>
+                <p>+62 895-4029-46153</p>
+              </div>
+            </div>
+            <div class="mb-4 flex items-start">
+              <div class="rounded-full bg-[#78B3CE] p-3 text-white">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-bold">Email</h3>
+                <p>hurihuriyahhuri@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="w-full p-4 md:w-1/2">
+            <form id="contactForm">
+              <div class="-mx-2 mb-4 flex flex-wrap">
+                <div class="mb-4 w-full px-2 md:mb-0 md:w-1/2">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full rounded border border-gray-300 p-3"
+                    required
+                  />
+                </div>
+                <div class="w-full px-2 md:w-1/2">
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    class="w-full rounded border border-gray-300 p-3"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  class="w-full rounded border border-gray-300 p-3"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <textarea
+                  placeholder="Message"
+                  class="h-32 w-full rounded border border-gray-300 p-3"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="rounded bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Greeting Card Modal -->
+    <div
+      id="greetingCard"
+      class="fixed inset-0 flex hidden items-center justify-center bg-gray-800 bg-opacity-50"
+    >
+      <div class="rounded bg-white p-9 text-center shadow-lg">
+        <h2 class="mb-4 text-xl font-bold">Terima Kasih!</h2>
+        <p class="mb-4">Pesan Anda telah berhasil dikirim.</p>
+        <button
+          id="finishButton"
+          class="rounded bg-[#78B3CE] px-4 py-2 text-white transition-colors hover:bg-blue-100"
+        >
+          Selesai
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#213555]">
+      <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div>
+            <div class="flex items-center">
+              <svg
+                class="text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-bed-double"
+              >
+                <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                <path d="M12 4v6" />
+                <path d="M2 18h20" />
+              </svg>
+              <span class="ml-2 text-xl font-bold text-white"
+                >Rent Company</span
+              >
+            </div>
+            <p class="mt-4 text-gray-400">Solusi cepat sewa ruangan</p>
+          </div>
+          <div>
+            <h3 class="mb-4 font-semibold text-white">Layanan</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Private Office</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Capsule Office</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Event Space</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Meeting Room</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-4 font-semibold text-white">Jam Operasional</h3>
+            <ul class="space-y-2">
+              <li class="text-gray-400">Senin - Jumat: 08.00 - 17.00</li>
+              <li class="text-gray-400">Sabtu: 08.00 - 15.00</li>
+              <li class="text-gray-400">Minggu: Tutup</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-4 font-semibold text-white">Follow Me</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-facebook"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-instagram"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-twitter"
+                >
+                  <path
+                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-700 pt-8">
+          <p class="text-center text-gray-400">
+            &copy; 2024 Rent Company. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+
+      const carousel = document.getElementById("carousel");
+      const slides = carousel.children.length;
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // Auto-scroll functionality
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides;
+        updateCarousel();
+      }, 3000); // Change slide every 3 seconds
+
+      const carouselReview = document.getElementById("carousel-review");
+      const slidesReview = carouselReview.children.length;
+
+      let currentIndexReview = 0;
+
+      function updateCarouselReview() {
+        carouselReview.style.transform = `translateX(-${
+          currentIndexReview * 100
+        }%)`;
+      }
+
+      // Auto-scroll functionality
+      setInterval(() => {
+        currentIndexReview = (currentIndex + 1) % slidesReview;
+        updateCarouselReview();
+      }, 3000); // Change slide every 3 seconds
+
+      // JavaScript for Greeting Card
+      const contactForm = document.getElementById("contactForm");
+      const greetingCard = document.getElementById("greetingCard");
+      const finishButton = document.getElementById("finishButton");
+
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent the default form submission
+        greetingCard.classList.remove("hidden"); // Show the greeting card
+      });
+
+      finishButton.addEventListener("click", () => {
+        greetingCard.classList.add("hidden"); // Hide the greeting card
+        contactForm.reset(); // Reset the form
+      });
+    </script>
+  </body>
+</html>
